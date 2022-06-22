@@ -13,7 +13,7 @@ export default {
       this.$router.currentRoute.path === "/analytics" &&
       localStorage.getItem("leadhit-site-id") !== "5f8475902b0be670555f1bb3"
     ) {
-      this.$router.push("/authorization");
+      this.$router.push("/");
     }
   },
 };

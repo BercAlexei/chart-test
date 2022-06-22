@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/authorization',
+    path: '/',
     name: 'authorization',
     component: Authorization
   },

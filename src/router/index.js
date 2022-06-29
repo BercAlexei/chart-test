@@ -9,12 +9,30 @@ const routes = [
   {
     path: '/authorization',
     name: 'authorization',
-    component: Authorization
+    component: Authorization,
+    beforeEnter: (to, from, next) => {
+      if (
+        localStorage.getItem("leadhit-site-id") == "5f8475902b0be670555f1bb3"
+      ) {
+        next({ path: '/analytics' })
+      } else {
+        next()
+      }
+    }
   },
   {
     path: '/analytics',
     name: 'analytics',
-    component: Analytics
+    component: Analytics,
+    beforeEnter: (to, from, next) => {
+      if (
+        localStorage.getItem("leadhit-site-id") !== "5f8475902b0be670555f1bb3"
+      ) {
+        next({ name: 'authorization' })
+      } else {
+        next()
+      }
+    }
   },
   {
     path: '/',

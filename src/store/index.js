@@ -75,7 +75,7 @@ export default new Vuex.Store({
 
   actions: {
     async getResult({ state, commit }) {
-      if (state.siteId.length >= 24) {
+      if (state.siteId.length === 24) {
 
         const res = await fetch(`https://track-api.leadhit.io/client/test_auth`, {
           method: "GET",

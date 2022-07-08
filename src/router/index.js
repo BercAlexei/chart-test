@@ -28,7 +28,7 @@ const routes = [
       if (
         localStorage.getItem("leadhit-site-id") !== "5f8475902b0be670555f1bb3"
       ) {
-        next({ name: 'authorization' })
+        next({ path: '/authorization' })
       } else {
         next()
       }
